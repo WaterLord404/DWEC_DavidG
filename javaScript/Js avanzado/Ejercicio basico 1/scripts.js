@@ -38,9 +38,13 @@ boton.addEventListener("click", () => {
 
 
 gallery.addEventListener("click", (e) => {
-    if (e.target.className == "selected") {
-        e.target.setAttribute("class", "gallery__item")
+    if (e.target.className == "gallery__item") {
+        e.target.classList.add("red");
     } else {
-        e.target.setAttribute("class", "selected");
+        e.target.classList.remove("red");
     }
+
+    console.log(e.target.textContent);
 });
+
+

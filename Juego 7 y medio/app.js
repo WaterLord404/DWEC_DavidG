@@ -1,5 +1,6 @@
 //CARTAS
 let cards = [
+
     { name: "1Bastos", points: 1, img: "./img/1Bastos.jpg" },
     { name: "2Bastos", points: 2, img: "./img/2Bastos.jpg" },
     { name: "3Bastos", points: 3, img: "./img/3Bastos.jpg" },
@@ -44,12 +45,12 @@ let cards = [
     { name: "9Espadas", points: 0.5, img: "./img/9Espadas.jpg" },
     { name: "10Espadas", points: 0.5, img: "./img/10Espadas.jpg" }
 ];
+
 //CLASE
 class player {
     constructor(name) {
         this.nombre = name;
         this.puntos = 0;
-
     }
 
     get name() {
@@ -73,9 +74,8 @@ class player {
 
         return lostGame;
     };
-
-
 }
+
 //Jugadores
 let player0 = new player('Human');
 let player1 = new player('CPU');
@@ -124,6 +124,7 @@ next_card_button.addEventListener("click", () => {
         mostrarResul(div_resul, null);
     }
 });
+
 ///////////////////////////////
 //ACABAR TURNO/////////////////
 end_turn_button.addEventListener("click", () => {
@@ -158,13 +159,12 @@ end_turn_button.addEventListener("click", () => {
         }
     }
 
-    //mostrar ventana fian
+    //mostrar ventana final
     let div_resul = document.getElementById("resul");
     mostrarResul(div_resul, loseCPU);
 });
 
 const mostrarResul = (div_resul, loseCpu) => {
-
     if (loseCpu == null) {
         div_resul.textContent = "HAS PERDIDO :(";
         ocultarBotones();

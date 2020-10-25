@@ -16,40 +16,40 @@ function inicializar() {
     let cinco = prompt("Introduce el quinto nombre");
     anadir(cinco, array);
 
-    muestraPrimeraLetra(array);
+    console.log(muestraPrimeraLetra(array));
 };
 
 
 function anadir(x, array) {
-    if (!compruebaSiExiste(array,x)) {
+    if (!compruebaSiExiste(array, x)) {
         array.push(x);
     } else {
         let nuevo = prompt("Ya existe el nombre, introduce otro");
-        anadir(nuevo,array);
+        anadir(nuevo, array);
     }
 
     return;
 }
 
-function compruebaSiExiste(array,x) {
+function compruebaSiExiste(array, x) {
     let resul = false;
 
-    for(let i = 0; i < array.length; i++){
-        if (x == array[i]){
+    for (let i = 0; i < array.length && !resul; i++) {
+        if (x == array[i]) {
             resul = true;
         }
     }
     return resul;
 };
 
-function muestraPrimeraLetra(array){
+function muestraPrimeraLetra(array) {
     array.sort();
     let cadena = "";
 
-    for(let i = 0; i < array.length; i++){
-        cadena = cadena + array[i] + " ";
+    for (let i = 0; i < array.length; i++) {
+        let string = array[i];
+        cadena = cadena + (string.charAt(0).toUpperCase() + string.slice(1)) + ' ';
     }
 
-    console.log(cadena.toUpperCase());
-    return;
+    return cadena;
 };
